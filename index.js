@@ -19,19 +19,18 @@ function showDialog(message) {
     }, 3000);
 }
 
-// Search button fetch function and logic
 searchBtn.addEventListener("click", async function fetchData() {
     moviesEl.innerHTML = '';
     const apiKey = "e0711f60";
     const userInput = document.getElementById("user-input").value;
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${userInput}`;
+    const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${userInput}`; // Changed to https
 
     const res = await fetch(url);
     const searchData = await res.json();
     // Check if res is true and if it is, iterate through the searchData array
     if (searchData.Response === "True") {
         movieDetails = await Promise.all(searchData.Search.map(async movie => {
-            const detailUrl = `http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`;
+            const detailUrl = `https://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`; // Changed to https
             const detailRes = await fetch(detailUrl);
             if (!detailRes.ok) {
                 throw new Error('Network response was not ok.');
@@ -69,6 +68,7 @@ searchBtn.addEventListener("click", async function fetchData() {
         showDialog('No results found for your search.');
     }
 });
+
 
 // Function to save movie to local storage
 function saveToWatchlist(movie) {
