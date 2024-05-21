@@ -1,0 +1,349 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(250, 235, 215, 0.684);
+    min-width: 296px;
+}
+
+.second-main{
+    border: 2px solid;
+}
+
+.goBackBtn{
+    padding: 19px 5px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    border-radius: 50%;
+    border: 2px solid;
+    font-size: 17px;
+    transition: 0.2s ease-in-out;
+}
+
+.goBackBtn:hover{
+    background-color: blanchedalmond;
+    transform: rotate(-15deg);
+}
+
+header {
+    position: relative;
+    width: 100%;
+}
+
+ /* this is fo the header background */
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* this section is for the watchlist img/btn and the label that is not a label but a p tag. you got it? :-D */
+.watchlist-el{
+    font-family: "Limelight", sans-serif;
+    cursor: pointer;
+    width: 100%;
+}
+
+.watchlist-el p{
+    font-size: 0.9rem;
+    font-family: "Oswald", sans-serif;
+    color: whitesmoke;
+    margin-top: 0;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.388);
+    padding: 0 3px 3px 3px;
+    letter-spacing: 1px;
+}
+
+/* this section here wraps everything together. the h2 tag the watchlist btn and the label/p-tag */
+.logo-watchlist {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.093);
+    text-align: center;
+}
+
+.logo-watchlist h2 {
+    font-family: "Limelight", sans-serif;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.watchlist-el img{
+    width: 70px;
+    height: 70px;
+}
+/* i had to put the img in a : a-tag to make it clickable */
+.watchlist-el a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.watchlist-el a:hover{
+    color: black;
+}
+
+/* this section is the search bar div that contains input and button */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    background-color: antiquewhite;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+}
+
+.search-bar input{
+    width: 70%;
+    height: 20px;
+    padding: 5px 0 5px 5px;
+    font-style: italic;
+    border-radius: 20px;
+    border: 2px solid;
+}
+
+.search-bar button{
+    border-radius: 20px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0 10px 2px 10px;
+    font-weight: bold;
+    background-color: rgb(185, 90, 6);
+    color: whitesmoke;
+    text-shadow:  0 0 10px black;
+    font-size: 18px;
+    border: 2px solid black;
+    transition: 0.2s ease-in-out;
+}
+
+.search-bar button:hover{
+    transform: scale(1.03);
+    background-color: whitesmoke;
+    color: rgb(185, 90, 6);
+    text-shadow: 0 0 1px rgb(0, 0, 0);
+}
+
+/* this section is for each movie poster */
+
+.movie-img img{
+    width: 100px;
+    height: auto;
+}
+
+/* now let's shrink the star */
+
+.movie-details-head span img{
+    width: 1.3rem;
+}
+
+/*  now lets place them how we see fit */
+
+.main-container{
+    display: flex;
+    gap: 10px;
+    width: auto;
+    padding: 10px;
+    background-color: bisque;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.main-container:first-child{
+    margin-top: 10px;
+}
+
+.add-to-watchlist{
+    height: 20px;
+}
+
+.add-to-watchlist button{
+   width:100%;
+   font-family: "Oswald", sans-serif;
+   cursor: pointer;
+   border: 2px solid;
+   border-radius: 15px;
+   transition: 0.2s ease-in-out;
+}
+
+.add-to-watchlist button:hover{
+   background-color: lightgreen;
+   transform: scale(1.06);
+ }
+
+.movie-details{
+    display: flex;
+    flex-direction: column;
+}
+
+/* we need to remove each divs margin */
+.movie-details-head h2, .movie-details-mid p{
+    margin:0 0 6px 0;
+}
+
+.description p{
+    margin:6px 0 0 0;
+}
+
+.description{
+    height: 85px;
+    overflow-y: auto;
+    margin-top: 16px;
+    padding: 0 5px;
+    scrollbar-width: none;
+}
+
+.description::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-details-head h2{
+    font-size: 100%;
+    font-family: "Oswald", sans-serif;
+}
+
+.movie-details-head span:first-child{
+    margin-left: 10px;
+}
+
+.movie-details-head span{
+   font-size: 100%;
+}
+
+.movie-details-mid{
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.movie-details-mid p{
+    font-size: 70%;
+    font-weight: bold;
+}
+
+.movies{
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 8px;
+}
+
+/* @media for screen 500px to 920px */
+@media screen and (min-width: 527px) {
+    .logo-watchlist {
+        text-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 175px;
+    }
+
+    .main-container{
+        border: 2px solid;
+        border-radius: 5px;
+    }
+
+    .movie-details-head h2{
+        font-family: "Oswald", sans-serif;
+    }
+
+    .movie-details-head span img{
+        width: 15px;
+    }
+
+    .movie-details-head span{
+        font-size: 10px;
+    }
+
+    .movie-details-head span:first-child{
+        margin-left: 0;
+    }
+
+    .logo-watchlist h2 {
+        font-size: 1.9rem;
+    }
+
+    .watchlist-el{
+        width: auto;
+    }
+
+    .search-bar input{
+        width: 70%;
+    }
+    
+    .description{
+        width: 100%;
+    }
+
+    .movies{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow-y: auto;
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .main-container:first-child{
+        margin-top: 0;
+    }
+}
+
+/* @media for screen 860px and up */
+@media screen and (min-width: 920px) {
+    .logo-watchlist {
+        text-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 175px;
+    }
+
+    .logo-watchlist h2 {
+        font-size: 4rem;
+    }
+
+    .watchlist-el{
+        width: auto;
+        transition: 0.2s ease-in-out;
+    }
+
+    .watchlist-el:hover{
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .search-bar{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .search-bar input{
+        width: 25%;
+    }
+    
+    .description{
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .movies{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        overflow-y: auto;
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .main-container:first-child{
+        margin-top: 0;
+    }
+}
